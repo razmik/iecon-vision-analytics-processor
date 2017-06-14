@@ -9,7 +9,9 @@ foldername = 'C:\\Users\\19146404\Documents\Datasets\Collective Activity Dataset
 folders = [f for f in listdir(foldername) if isdir(join(foldername, f))]
 filenames = []
 
-for i in np.arange(30, 200, 10):
+sleep(2100)
+
+for i in np.arange(5, 205, 10):
 
     if i < 100:
         frame = 'frame00' + str(i) + '.jpg'
