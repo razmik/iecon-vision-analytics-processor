@@ -1,6 +1,7 @@
 import sys
 import csv
 import json
+import numpy as np
 import pandas as pd
 from os import listdir
 from os.path import join, isfile
@@ -39,7 +40,7 @@ for filename in filenames:
 
         # save the data on the feature
         print('Writing features of', filename)
-        with open(output_folder + filename.split('.')[0] + '.csv', 'w') as outfile:
+        with open(output_folder + filename.split('.')[0] + '.csv', 'w', newline='') as outfile:
             writer = csv.DictWriter(outfile, fieldnames=dict_keys)
             writer.writeheader()
             for seq in sequence_feature_list:
