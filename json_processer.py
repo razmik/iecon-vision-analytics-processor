@@ -7,7 +7,7 @@ from nltk.corpus import stopwords
 print('Initializing jsontocsv...')
 
 # read input command
-inputfile = 'vision.json'
+inputfile = 'data/frame0001.jpg_vision.json'
 outputfile = 'vision_processed.json'
 
 print('Reading from ' + inputfile + '...')

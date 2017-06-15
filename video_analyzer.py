@@ -20,6 +20,7 @@ class ImageAnalyzer:
         self.emotion_api_key = None
         self.original = "Original View"
         self.analyze_frame = "Analyzed View"
+        self.data_folder = 'data/'
 
     def start_process(self, frame_id, filenames, vision_api_key, emotion_api_key, enable_emotions=False, display=False):
         self.vision_api_key = vision_api_key
@@ -44,13 +45,15 @@ class ImageAnalyzer:
                 self._process_frame(iteration, image, img_data)
             iteration += 1
 
-        with open(frame_id + '_vision.json', "w", encoding="utf8") as outfile:
+        with open(self.data_folder + frame_id + '_vision.json', "w", encoding="utf8") as outfile:
             json.dump(self.summary_vision, outfile)
+            self.summary_vision = []
             print('Dumping json for', frame_id)
 
         if enable_emotions:
-            with open(frame_id + '_emotion.json', "w", encoding="utf8") as outfile:
+            with open(self.data_folder + frame_id + '_emotion.json', "w", encoding="utf8") as outfile:
                 json.dump(self.summary_emotions, outfile)
+                self.summary_emotions = []
 
         return True
 
