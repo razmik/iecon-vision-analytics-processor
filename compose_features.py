@@ -21,6 +21,7 @@ dict_keys = list(word_dictionary_template.keys())
 
 print('Number of files', len(filenames))
 
+
 # loop through all the frames to create the features
 for filename in filenames:
 
